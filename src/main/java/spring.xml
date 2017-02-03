@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<bean id="line" class="kam.jar.radek.spring.demo.Line">
+		<!-- <property name="type" value="Equilateral"></property> -->
+		<constructor-arg index="0" value="Equilateral"></constructor-arg>
+		<constructor-arg index="1" value="20"></constructor-arg>
+	</bean>
+	<bean id="triangle" class="kam.jar.radek.spring.demo.Triangle">
+		<property name="pointA" ref="zeroPoint"></property>
+		<property name="pointB" ref="Point2"></property>
+		<property name="pointC" ref="Point3"></property>
+	</bean>
+
+	<bean id="zeroPoint" class="kam.jar.radek.spring.demo.Point">
+		<property name="x" value="0"></property>
+		<property name="y" value="0"></property>
+	</bean>
+
+	<bean id="Point2" class="kam.jar.radek.spring.demo.Point">
+		<property name="x" value="-20"></property>
+		<property name="y" value="0"></property>
+	</bean>
+
+	<bean id="Point3" class="kam.jar.radek.spring.demo.Point">
+		<property name="x" value="20"></property>
+		<property name="y" value="0"></property>
+	</bean>
+
+</beans>

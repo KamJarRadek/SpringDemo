@@ -1,11 +1,7 @@
 package kam.jar.radek.spring.demo;
 
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.ClassPathBeanDefinitionScanner;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.core.io.FileSystemResource;
 
 public class DrawingApp {
 
@@ -21,5 +17,8 @@ public class DrawingApp {
 		
 		Triangle triangle = (Triangle) context.getBean("triangle");
 		triangle.draw();
+		
+		SecondTriangleClass secondTriangle = (SecondTriangleClass) context.getBean("secondTriangle");
+		secondTriangle.draw();
 	}
 }

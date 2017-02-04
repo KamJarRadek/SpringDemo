@@ -20,5 +20,9 @@ public class DrawingApp {
 		
 		SecondTriangleClass secondTriangle = (SecondTriangleClass) context.getBean("secondTriangle");
 		secondTriangle.draw();
+		
+		Circle circle = (Circle) context.getBean("circle");
+		circle.draw();
 	}
 }
+ 

@@ -2,7 +2,7 @@ package kam.jar.radek.spring.demo;
 
 import java.util.List;
 
-public class Triangle {
+public class Triangle implements Shape {
 
 	private List<Point> points;
 

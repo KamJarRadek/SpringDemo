@@ -30,6 +30,7 @@ public class SecondTriangleClass {
 		this.pointC = pointC;
 	}
 	public void draw() {
+		System.out.println("Drawing Triangle.");
 		System.out.println("Point A = (" + getPointA().getX() + ", " + getPointA().getY() + " )");
 		System.out.println("Point B = (" + getPointB().getX() + ", " + getPointB().getY() + " )");
 		System.out.println("Point C = (" + getPointC().getX() + ", " + getPointC().getY() + " )");

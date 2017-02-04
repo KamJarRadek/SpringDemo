@@ -5,7 +5,7 @@
 		<!-- <property name="type" value="Equilateral"></property> bezpośrednie 
 			odwolanie do pola -->
 		<!-- odwołanie do konstruktora. index wksazuje na kolejnosc parametrow -->
-		<!-- w tym wypadku String jest pierwszxy pod indeksem zero, int drugi pod 
+		<!-- w tym wypadku String jest pierwszy pod indeksem zero, int drugi pod 
 			indeksem 1 -->
 		<constructor-arg index="0" value="Equilateral"></constructor-arg>
 		<constructor-arg index="1" value="20"></constructor-arg>
@@ -31,15 +31,15 @@
 			</list>
 		</property>
 	</bean>
-	
-	<bean id="secondTriangle" class="kam.jar.radek.spring.demo.SecondTriangleClass" 
-	autowire="byName"></bean>
-	
+
+	<bean id="secondTriangle" class="kam.jar.radek.spring.demo.SecondTriangleClass"
+		autowire="byName"></bean>
+
 	<bean id="pointA" class="kam.jar.radek.spring.demo.Point">
-		<property name="x" value="0"></property>
-		<property name="y" value="0"></property>
+		<property name="x" value="${pointA.pointX}"></property>
+		<property name="y" value="${pointA.pointY}"></property>
 	</bean>
-	
+
 	<bean id="pointB" class="kam.jar.radek.spring.demo.Point">
 		<property name="x" value="-20"></property>
 		<property name="y" value="0"></property>
@@ -49,6 +49,23 @@
 		<property name="x" value="20"></property>
 		<property name="y" value="0"></property>
 	</bean>
+	<!-- aby metody begore i after initialization dzialaly nalezy stworzyc bean 
+		klasy w xmlowym pliku springa -->
+	<!-- <bean class="kam.jar.radek.spring.demo.DesplayNameBeanPostProcessor"></bean> -->
 
+	<!-- <bean class="kam.jar.radek.spring.demo.MyBeanFactory"></bean> -->
+
+
+	<!-- najpierw deklarujemy uzycie placeholderow a w property podajemy nazwe: 
+		locations i jej wartosc czyli nazwe pliku -->
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations" value="pointsconfig.properties"></property>
+	</bean>
+
+	<bean id="circle" class="kam.jar.radek.spring.demo.Circle">
+<!-- 		<property name="center" ref="pointA"></property> -->
+	</bean>
+	<bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"></bean>
 
 </beans>
